@@ -1,351 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Seun!</title>
-    <link rel="stylesheet" href="style.css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle, #ffb6c1, #ff69b4);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    h1 {
+      font-size: 4rem;
+      color: white;
+      text-shadow: 2px 2px 4px #000;
+      animation: pop 1s ease-out;
+      display: none;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: gold;
+      animation: fall 3s linear infinite;
+      display: none;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-100px) rotate(0deg); }
+      100% { transform: translateY(100vh) rotate(360deg); }
+    }
+
+    .gift-box {
+      width: 150px;
+      height: 150px;
+      background-color: #fff;
+      border: 4px solid #ff1493;
+      border-radius: 10px;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      color: #ff1493;
+      font-weight: bold;
+    }
+
+    .lid {
+      position: absolute;
+      width: 100%;
+      height: 40px;
+      background-color: #ff1493;
+      top: -40px;
+      left: 0;
+      border-radius: 10px 10px 0 0;
+      transition: transform 0.5s ease;
+    }
+
+    .open .lid {
+      transform: translateY(-80px) rotate(-20deg);
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container nav-container">
-            <h2>Happy Birthday Seun!</h2>
-            <div class="nav-links">
-                <a href="#reasons">OSK</a>
-                <a href="#memories">YOur Memories</a>
-                <a href="#music">Your Playlist</a>
-                <a href="onlyyou.html">what only you say</a>
-            </div>
-        </div>
-    </nav>
+  <div class="gift-box" id="giftBox">
+    <div class="lid"></div>
+    OPEN
+  </div>
 
-    <!-- Hero Section -->
-    <section class="hero" style="
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), 
-                url('image/bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    position: relative;
-">
-    <div class="container hero-content" style="
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        position: relative;
-        z-index: 2;
-    ">
-        <h1 style="font-size: 3.5rem; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Happy Birthday My Love!</h1>
-        <p style="font-size: 1.2rem; margin-bottom: 30px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Today we celebrate the most amazing person in my life. This website is just a small token of how much you mean to me.</p>
-        <a href="#reasons" class="btn" style="
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: #d32f2f;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        ">Discover My Love</a>
-    </div>
-    <div style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.2);
-        z-index: 1;
-    "></div>
-</section>
+  <h1 id="birthdayMessage">Happy Birthday, Seun!</h1>
 
-    <!-- Reasons Section -->
-    <section id="reasons" class="reasons">
-        <div class="container">
-            <h2>All The Amazing Parts That Makes You Osk</h2>
-            <p>Just a few of the countless reasons you're amazing</p>
-            
-            <div class="reasons-grid">
-                <div class="reason-card" style="
-    background-image: url('image/smile1.jpg');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    color: white;
-    overflow: hidden;
-">
-    <div style="
-        position: relative;
-        z-index: 2;
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 20px;
-        border-radius: 8px;
-    ">
-        <h3><i class="fas fa-heart"></i> Your Beautiful Smile</h3>
-        <p>The way your smile lights up any room you walk into. It's my favorite thing in the world.</p>
-    </div>
-    <div style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.3);
-        z-index: 1;
-    "></div>
-</div>
+  <audio autoplay loop>
+    <source src="https://openverse-api.openai.com/v1/audio/generate/7bffd4e1-e0a9-4bd7-89ec-105fbf54108d/jvke-her.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
+  <script>
+    const box = document.getElementById('giftBox');
+    const message = document.getElementById('birthdayMessage');
 
-<div class="reasons-grid">
-    <div class="reason-card" style="
-background-image: url('image/humor.jpg');
-background-size: cover;
-background-position: center;
-position: relative;
-color: white;
-overflow: hidden;
-">
-<div style="
-position: relative;
-z-index: 2;
-background-color: rgba(0, 0, 0, 0.5);
-padding: 20px;
-border-radius: 8px;
-">
- <h3><i class="fas fa-laugh"></i> Your Sense of Humor</h3>
- <p>You make me laugh like no one else can. Even on my worst days, you know how to cheer me up.</p>
-</div>
-<div style="
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background-color: rgba(0, 0, 0, 0.3);
-z-index: 1;
-"></div>
-</div>
+    function createConfetti(count) {
+      for (let i = 0; i < count; i++) {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        confetti.style.animationDuration = (Math.random() * 2 + 3) + 's';
+        confetti.style.display = 'block';
+        document.body.appendChild(confetti);
+      }
+    }
 
-<div class="reasons-grid">
-    <div class="reason-card" style="
-background-image: url('image/goofy.jpg');
-background-size: cover;
-background-position: center;
-position: relative;
-color: white;
-overflow: hidden;
-">
-<div style="
-position: relative;
-z-index: 2;
-background-color: rgba(0, 0, 0, 0.5);
-padding: 20px;
-border-radius: 8px;
-">
-<h3><i class="fas fa-heart"></i> Your Positive Energy</h3>
-<p>You bring sunshine wherever you go. Your optimism is contagious</p>
-</div>
-<div style="
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background-color: rgba(0, 0, 0, 0.3);
-z-index: 1;
-"></div>
-</div>
-                
-                
-                <div class="reason-card">
-                    <h3><i class="fas fa-brain"></i> Your Brilliant Mind</h3>
-                    <p>I love how intelligent you are and how you see the world in such a unique way.</p>
-                </div>
-                
-                <div class="reason-card">
-                    <h3><i class="fas fa-hand-holding-heart"></i> Your Kindness</h3>
-                    <p>You're the most compassionate person I know, always putting others before yourself.</p>
-                </div>
-                
-                
-                
-                <div class="reason-card">
-                    <h3><i class="fas fa-music"></i> Your Love for Music</h3>
-                    <p>I love how music moves you and how we can share that passion together.</p>
-                </div>
+    box.addEventListener('click', () => {
+      box.classList.add('open');
+      message.style.display = 'block';
+      message.style.animation = 'pop 1s ease-out';
+      createConfetti(100);
 
-                <div class="reason-card">
-                    <h3><i class="fas fa-hand-holding-heart"></i> Your facial Expressions</h3>
-                    <p>You are the most Nigerian parent ever person i've met, you have the deathstares , the whats doing you look, Your facial Expressions are peak , watching you tell a stoory is like the most amazing thing ever.</p>
-                </div>
-                
-                <div class="reason-card">
-                    <h3><i class="fas fa-laugh"></i> Your Sense of Humor</h3>
-                    <p>You make me laugh like no one else can. Even on my worst days, you know how to cheer me up.</p>
-                </div>
-                
-                <div class="reason-card">
-                    <h3><i class="fas fa-music"></i> Your Love for Music</h3>
-                    <p>I love how music moves you and how we can share that passion together.</p>
-                </div>
-
-
-                <div class="reason-card">
-                    <h3><i class="fas fa-hand-holding-heart"></i> Your Kindness</h3>
-                    <p>You're the most compassionate person I know, always putting others before yourself.</p>
-                </div>
-                
-                <div class="reason-card">
-                    <h3><i class="fas fa-laugh"></i> Your Sense of Humor</h3>
-                    <p>You make me laugh like no one else can. Even on my worst days, you know how to cheer me up.</p>
-                </div>
-                
-                <div class="reason-card">
-                    <h3><i class="fas fa-music"></i> Your Love for Music</h3>
-                    <p>I love how music moves you and how we can share that passion together.</p>
-                </div>
-
-
-                
-                    
-               
-            </div>
-            
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="#memories" class="btn">See Our Memories</a>
-        
-    </section>
-
-    <!-- Memories Section -->
-    <section id="memories" class="memories">
-        <div class="container">
-            <h2>Our Special Memories</h2>
-            <p>Moments I'll cherish forever with you</p>
-            
-            <div class="memory-gallery">
-                <div class="memory-item">
-                    <img src="image/pica.jpg" alt="Our First Date">
-                    <div class="memory-overlay">
-                        <h3>PICA-OSK</h3>
-                        <p>color FEst</p>
-                    </div>
-                </div>
-                
-                <div class="memory-item">
-                    <img src="image/award.jpg" alt="Beach Vacation">
-                    <div class="memory-overlay">
-                        <h3>Big Celeb</h3>
-                        <p>Award Night</p>
-                    </div>
-                </div>
-                
-                <div class="memory-item">
-                    <img src="image/nightstroll.jpg" alt="Birthday Celebration">
-                    <div class="memory-overlay">
-                        <h3>I SEE THe MOon The Moon See Me </h3>
-                        <p>Legendary Evening strolls</p>
-                    </div>
-                </div>
-                
-                <div class="memory-item">
-                    <img src="image/emeka.jpg" alt="Christmas Together">
-                    <div class="memory-overlay">
-                        <h3>Emeka The Rabit</h3>
-                        <p><strong>life in school</strong> ps; you should have bursted the litttle guy out of there</p>
-                    </div>
-                </div>
-                
-                <div class="memory-item">
-                    <img src="image/sunday.jpg" alt="Random Day">
-                    <div class="memory-overlay">
-                        <h3>Sundays</h3>
-                        <p>God is Good , Damn He's so great</p>
-                    </div>
-                </div>
-                
-                <div class="memory-item">
-                    <img src="image/reading.jpg" alt="Adventure">
-                    <div class="memory-overlay">
-                        <h3>School Late Nights</h3>
-                        <p>Around the perod you read untul your body was doing Gr gR Gr</p>
-                    </div>
-                </div>
-
-
-                <div class="memory-item">
-                    <img src="image/goofball.jpg" alt="Adventure">
-                    <div class="memory-overlay">
-                        <h3>Our Adventures</h3>
-                        <p>Exploring the world together</p>
-                    </div>
-                </div>
-
-                <div class="memory-item">
-                    <img src="image/girlspicnic.jpg" alt="Adventure">
-                    <div class="memory-overlay">
-                        <h3>Our Adventures</h3>
-                        <p>Exploring the world together</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section>
-        <div>
-
-        </div>
-    </section>
-
-
-    <!-- Music Section -->
-    <section id="music" class="music">
-        <div class="container">
-            <h2>Your Special Birthday Playlist</h2>
-            <p>A collection of songs that remind me of you</p>
-            
-            <div class="barcode-container">
-                <div class="barcode"></div>
-                <p style="margin-top: 20px; font-style: italic;">Scan me to open your playlist!</p>
-            </div>
-            
-            <p>This playlist contains songs that remind me of you, our special moments, and all the feelings you inspire in me.</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>Happy Birthday my love! Here's to many more years together.</p>
-            <p>With all my heart,</p>
-            <p style="margin-top: 10px; font-weight: bold;">TYE</p>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Barcode click event (replace with actual Spotify link)
-        document.querySelector('.barcode').addEventListener('click', function() {
-            window.open('https://open.spotify.com/playlist/YOUR_PLAYLIST_LINK', '_blank');
-        });
-    </script>
+      // Redirect to main birthday site after 4 seconds
+      setTimeout(() => {
+        window.location.href = "home.html"; // Change to your main page filename
+      }, 4000);
+    });
+  </script>
 </body>
 </html>
